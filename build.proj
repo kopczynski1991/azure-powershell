@@ -161,6 +161,7 @@
     <Exec Command="Import-Module $(RepoTools)\ModuleMetadata\GetModuleMetadata.psm1" />
     <Exec Command="Export-ModuleMetadata -Configuration $(Configuration) -ModuleList '%(FilterTaskResult.breaking-change)'" />
     <Exec Command="Export-ModuleMetadata -Configuration $(Configuration) -ModuleList '%(FilterTaskResult.signature)'" />
+    <Exec Command="Export-ModuleMetadata -Configuration $(Configuration) -ModuleList '%(FilterTaskResult.help)'" />
   </Target>
 
   <Target Name="BuildNormalModules">
