@@ -377,7 +377,7 @@ function Export-ModuleMetadata
     Write-Host $ModuleList
     Write-Host "=============================="
     $ArtifactsPath = [System.IO.Path]::Combine($PSScriptRoot, "..", "..", "artifacts", $Configuration)
-    foreach ($Module in $ModuleList)
+    foreach ($Module in $ModuleList.Split(";"))
     {
         $Path = [System.IO.Path]::Combine($ArtifactsPath, "Az.$Module")
         Get-ModuleMetadata -Path $Path
